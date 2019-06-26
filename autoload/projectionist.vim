@@ -289,6 +289,11 @@ function! g:projectionist_transformations.camelcase(input, o) abort
   return substitute(a:input, '[_-]\(.\)', '\u\1', 'g')
 endfunction
 
+function! g:projectionist_transformations.lowercamelcase(input, o) abort
+  let str = substitute(a:input, '\%(^\|/\)\zs\(.\)', '\l\1', 'g')
+  return substitute(str, '[_-]\(.\)', '\u\1', 'g')
+endfunction
+
 function! g:projectionist_transformations.capitalize(input, o) abort
   return substitute(a:input, '\%(^\|/\)\zs\(.\)', '\u\1', 'g')
 endfunction
